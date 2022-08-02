@@ -1,11 +1,6 @@
 def FAILED_STAGE
 pipeline {
-  agent {
-    kubernetes {
-      yamlFile 'build-pod.yaml'
-    }
-
-  }
+  agent any
   environment {
     MAVEN_OPTS = "-Dmaven.repo.local=/m2"
     DOCKERHUB_CREDENTIALS=credentials('dockerCredentials')
