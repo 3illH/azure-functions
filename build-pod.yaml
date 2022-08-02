@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: maven
+    image: maven:3.8.4-openjdk-11
+    command: ['sleep', '60m']
+    tty: true
+    resources:
+      limits:
+         cpu: 350m
+         memory: 4Gi
+      requests:
+         cpu: 150m
+         memory: 4Gi
