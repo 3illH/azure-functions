@@ -13,6 +13,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Hello, Jenkins'
+        sh 'ls -lrt'
         dotnetRestore project: '*.csproj', sdk: 'net6'
       }
     }
