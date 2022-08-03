@@ -10,11 +10,12 @@ pipeline {
         checkout([$class: 'GitSCM', branches: [[name: 'master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/3illH/azure-functions']]])
       }
     }
-    stage('Restore') {
+    stage('Build') {
       steps {
         echo 'Hello, Jenkins'
         sh 'ls -lrt'
-        dotnetRestore project: 'azure-functions.csproj', sdk: 'net6'
+        // dotnetRestore project: 'azure-functions.csproj', sdk: 'net6'
+        dotnetBuild project: 'azure-functions.csproj', sdk: 'net6'
       }
     }
   }
