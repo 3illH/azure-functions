@@ -37,7 +37,7 @@ pipeline {
     stage('Package') {
       steps {
         sh 'ls -lrt'
-        zip archive: true, dir: '/bin', exclude: '', glob: '', zipFile: 'azure-function'
+        zip archive: true, dir: './bin', exclude: '', glob: '', zipFile: 'azure-function.zip'
         // sh 'dotnet build azure-functions.csproj'
       }
     }
