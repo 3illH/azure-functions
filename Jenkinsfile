@@ -10,11 +10,11 @@ pipeline {
         checkout([$class: 'GitSCM', branches: [[name: 'master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/3illH/azure-functions']]])
       }
     }
-    stage('Setup .NET') {
-      steps {
-        sh 'apt-get install -y dotnet-sdk-6.0'
-      }
-    }
+    // stage('Setup .NET') {
+    //   steps {
+    //     sh 'apt-get install -y dotnet-sdk-6.0'
+    //   }
+    // }
     stage('Restore') {
       steps {
         echo 'Hello, Jenkins'
