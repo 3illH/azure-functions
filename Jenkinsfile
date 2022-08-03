@@ -24,6 +24,22 @@ pipeline {
         // dotnetBuild project: 'azure-functions.csproj', sdk: 'net6'
       }
     }
+    stage('Build') {
+      steps {
+        sh 'dotnet build azure-functions.csproj'
+      }
+    }
+    stage('Test') {
+      steps {
+        sh 'dotnet test azure-functions.csproj'
+      }
+    }
+    stage('Package') {
+      steps {
+        sh 'ls -lrt'
+        // sh 'dotnet build azure-functions.csproj'
+      }
+    }
   }
   post {
       // Clean after build
