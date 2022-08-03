@@ -14,7 +14,7 @@ pipeline {
       steps {
         echo 'Hello, Jenkins'
         sh 'ls -lrt'
-        dotnetRestore project: 'azure-functions.csproj.csproj', sdk: 'net6'
+        dotnetRestore project: 'azure-functions.csproj', sdk: 'net6'
       }
     }
   }
