@@ -12,7 +12,7 @@ pipeline {
     }
     stage('Setup .NET') {
       steps {
-        sh 'sudo apt-get install -y dotnet-sdk-6.0'
+        sh 'apt-get install -y dotnet-sdk-6.0'
       }
     }
     stage('Restore') {
